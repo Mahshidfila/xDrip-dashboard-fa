@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Diabetes Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>داشبورد قند خون</h1>
+    <div id="blood-glucose-graph"></div>
+    
+    <script>
+        var data = [
+            {
+                x: ["2024-11-16 08:00", "2024-11-16 09:00", "2024-11-16 10:00"],
+                y: [120, 150, 100],
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: 'سطح قند خون',
+            }
+        ];
+        
+        var layout = {
+            title: "سطح قند خون بر اساس زمان",
+            xaxis: {
+                title: "زمان"
+            },
+            yaxis: {
+                title: "قند خون (mg/dL)"
+            }
+        };
+        
+        Plotly.newPlot('blood-glucose-graph', data, layout);
+    </script>
+</body>
+</html>
